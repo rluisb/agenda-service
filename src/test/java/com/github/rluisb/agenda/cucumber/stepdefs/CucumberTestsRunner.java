@@ -1,6 +1,6 @@
 package com.github.rluisb.agenda.cucumber.stepdefs;
 
-import com.github.rluisb.agenda.agenda.AgendaServiceApplication;
+import com.github.rluisb.agenda.AgendaServiceApplication;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;

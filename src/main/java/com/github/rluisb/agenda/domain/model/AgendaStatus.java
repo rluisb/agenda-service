@@ -1,4 +1,4 @@
-package com.github.rluisb.agenda.agenda.domain.model;
+package com.github.rluisb.agenda.domain.model;
 
 public enum AgendaStatus {
 

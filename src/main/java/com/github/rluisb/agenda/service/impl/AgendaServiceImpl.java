@@ -1,11 +1,11 @@
-package com.github.rluisb.agenda.agenda.service.impl;
+package com.github.rluisb.agenda.service.impl;
 
-import com.github.rluisb.agenda.agenda.repository.AgendaRepository;
-import com.github.rluisb.agenda.agenda.service.AgendaService;
-import com.github.rluisb.agenda.agenda.api.dto.AgendaDto;
-import com.github.rluisb.agenda.agenda.domain.entity.AgendaEntity;
-import com.github.rluisb.agenda.agenda.domain.model.Agenda;
-import com.github.rluisb.agenda.agenda.domain.model.AgendaStatus;
+import com.github.rluisb.agenda.repository.AgendaRepository;
+import com.github.rluisb.agenda.service.AgendaService;
+import com.github.rluisb.agenda.api.dto.AgendaDto;
+import com.github.rluisb.agenda.domain.entity.AgendaEntity;
+import com.github.rluisb.agenda.domain.model.Agenda;
+import com.github.rluisb.agenda.domain.model.AgendaStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

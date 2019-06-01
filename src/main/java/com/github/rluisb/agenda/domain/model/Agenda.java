@@ -1,7 +1,7 @@
-package com.github.rluisb.agenda.agenda.domain.model;
+package com.github.rluisb.agenda.domain.model;
 
-import com.github.rluisb.agenda.agenda.api.dto.AgendaDto;
-import com.github.rluisb.agenda.agenda.domain.entity.AgendaEntity;
+import com.github.rluisb.agenda.api.dto.AgendaDto;
+import com.github.rluisb.agenda.domain.entity.AgendaEntity;
 
 import java.io.Serializable;
 

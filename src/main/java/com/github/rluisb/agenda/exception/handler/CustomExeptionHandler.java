@@ -1,6 +1,6 @@
-package com.github.rluisb.agenda.agenda.exception.handler;
+package com.github.rluisb.agenda.exception.handler;
 
-import com.github.rluisb.agenda.agenda.exception.ErrorResponse;
+import com.github.rluisb.agenda.exception.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

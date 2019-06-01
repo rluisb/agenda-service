@@ -1,8 +1,8 @@
-package com.github.rluisb.agenda.agenda.api;
+package com.github.rluisb.agenda.api;
 
-import com.github.rluisb.agenda.agenda.service.AgendaService;
-import com.github.rluisb.agenda.agenda.api.dto.AgendaDto;
-import com.github.rluisb.agenda.agenda.domain.model.AgendaStatus;
+import com.github.rluisb.agenda.service.AgendaService;
+import com.github.rluisb.agenda.api.dto.AgendaDto;
+import com.github.rluisb.agenda.domain.model.AgendaStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

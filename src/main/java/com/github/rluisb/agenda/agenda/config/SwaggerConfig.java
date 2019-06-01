@@ -1,4 +1,4 @@
-package com.github.rluisb.agenda.config;
+package com.github.rluisb.agenda.agenda.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

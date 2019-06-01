@@ -1,4 +1,4 @@
-package com.github.rluisb.agenda.exception;
+package com.github.rluisb.agenda.agenda.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

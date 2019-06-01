@@ -1,4 +1,4 @@
-package com.github.rluisb.agenda.api.dto;
+package com.github.rluisb.agenda.agenda.api.dto;
 
 import org.springframework.validation.annotation.Validated;
 

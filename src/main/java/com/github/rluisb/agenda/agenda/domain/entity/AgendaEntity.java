@@ -1,7 +1,7 @@
-package com.github.rluisb.agenda.domain.entity;
+package com.github.rluisb.agenda.agenda.domain.entity;
 
-import com.github.rluisb.agenda.domain.model.Agenda;
-import com.github.rluisb.agenda.domain.model.AgendaStatus;
+import com.github.rluisb.agenda.agenda.domain.model.Agenda;
+import com.github.rluisb.agenda.agenda.domain.model.AgendaStatus;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

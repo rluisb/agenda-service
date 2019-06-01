@@ -1,8 +1,8 @@
-package com.github.rluisb.agenda.service;
+package com.github.rluisb.agenda.agenda.service;
 
-import com.github.rluisb.agenda.api.dto.AgendaDto;
-import com.github.rluisb.agenda.domain.model.Agenda;
-import com.github.rluisb.agenda.domain.model.AgendaStatus;
+import com.github.rluisb.agenda.agenda.api.dto.AgendaDto;
+import com.github.rluisb.agenda.agenda.domain.model.Agenda;
+import com.github.rluisb.agenda.agenda.domain.model.AgendaStatus;
 
 import java.util.List;
 import java.util.Optional;

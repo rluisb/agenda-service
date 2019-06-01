@@ -1,7 +1,7 @@
-package com.github.rluisb.agenda.repository;
+package com.github.rluisb.agenda.agenda.repository;
 
-import com.github.rluisb.agenda.domain.entity.AgendaEntity;
-import com.github.rluisb.agenda.domain.model.AgendaStatus;
+import com.github.rluisb.agenda.agenda.domain.entity.AgendaEntity;
+import com.github.rluisb.agenda.agenda.domain.model.AgendaStatus;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

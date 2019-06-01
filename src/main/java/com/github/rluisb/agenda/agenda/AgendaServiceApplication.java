@@ -1,4 +1,4 @@
-package com.github.rluisb.agenda;
+package com.github.rluisb.agenda.agenda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

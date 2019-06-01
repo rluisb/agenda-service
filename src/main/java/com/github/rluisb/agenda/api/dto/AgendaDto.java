@@ -8,11 +8,11 @@ import javax.validation.constraints.NotNull;
 @Validated
 public class AgendaDto {
 
-    @NotNull(message = "The title must be filled.")
-    @NotBlank(message = "The title must be filled.")
+    @NotNull(message = "The title can't be null.")
+    @NotBlank(message = "The title can't be empty.")
     private String title;
-    @NotNull(message = "The subject must be filled.")
-    @NotBlank(message = "The subject must be filled.")
+    @NotNull(message = "The subject can't be null.")
+    @NotBlank(message = "The subject can't be empty.")
     private String subject;
     private String description;
 

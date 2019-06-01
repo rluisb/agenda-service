@@ -2,9 +2,9 @@ package com.github.rluisb.agenda.cucumber.stepdefs;
 
 import com.github.rluisb.agenda.TestConfig;
 import com.github.rluisb.agenda.api.dto.AgendaDto;
+import com.github.rluisb.agenda.cucumber.World;
 import com.github.rluisb.agenda.domain.model.Agenda;
 import com.github.rluisb.agenda.domain.model.AgendaStatus;
-import com.github.rluisb.agenda.cucumber.World;
 import cucumber.api.java8.En;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -18,8 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class AgendaStepdefs extends TestConfig implements En {
 
@@ -34,13 +33,13 @@ public class AgendaStepdefs extends TestConfig implements En {
         Given("^a title (.*)$", (String title) -> {
             world.map.put("title", title);
         });
-        And("^a description (.*)$", (String description) -> {
+        Given("^a description (.*)$", (String description) -> {
             world.map.put("description", description);
         });
-        And("^a subject (.*)$", (String subject) -> {
+        Given("^a subject (.*)$", (String subject) -> {
             world.map.put("subject", subject);
         });
-        When("^create a new agenda$", () -> {
+        Given("^create a new agenda$", () -> {
             world.status = 200;
 
             String title = (String) world.map.get("title");
@@ -63,16 +62,19 @@ public class AgendaStepdefs extends TestConfig implements En {
             }
         });
         Then("^should return status (\\d+)$", (Integer status) -> {
-            assertEquals(world.status, status);
+            assertEquals(status, world.status);
         });
-        And("^should return a new agenda$", () -> {
+        Then("^should return a new agenda$", () -> {
             assertNotNull(world.agenda);
         });
-        And("^this agenda should have an id$", () -> {
+        Then("^this agenda should have an id$", () -> {
             assertNotNull(world.agenda.getId());
         });
-        And("^should have a status (.*)$", (AgendaStatus status) -> {
-            assertEquals(world.agenda.getStatus(), status);
+        Then("^should have a status (.*)$", (AgendaStatus status) -> {
+            assertEquals(status, world.agenda.getStatus());
+        });
+        Then("^should contain a message equal (.*)$", (String errorMessage) -> {
+            assertTrue(world.errorMessage.contains(errorMessage));
         });
     }
 }

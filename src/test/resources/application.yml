@@ -2,3 +2,9 @@ server:
   port: 8080
   servlet:
     context-path: /agenda-service/v1
+
+spring:
+  mongodb:
+    embedded:
+      storage:
+        database-dir: /tmp/agenda-test-data

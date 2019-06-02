@@ -1,4 +1,4 @@
-Feature: Maintain agendas
+Feature: Create agenda
 
   Scenario: Create an agenda with success
     Given a title Titulo 1
@@ -51,3 +51,27 @@ Feature: Maintain agendas
     And this agenda should have an id
     And should have a status WAITING_FOR_VOTING
     And a null description
+
+  Scenario: Find all agendas
+    When request all agendas
+    Then should return status 200
+    And a list of agendas
+
+  Scenario: Find all agendas filtering by status
+    Given a status WAITING_FOR_VOTING
+    When request all agendas
+    Then should return status 200
+    And a list of agendas
+    And all agendas should have a status equal to the used to filter
+
+  Scenario: Find agenda by id
+    Given an id
+    When request an agenda filtering by it's id
+    Then should return status 200
+    And an agenda with an id equal to the id used to filter
+
+  Scenario: Find agenda by id
+    Given an invalid id
+    When request an agenda filtering by it's id
+    Then should return status 400
+    And a message containing No records found for this request.

@@ -20,7 +20,7 @@ import java.util.Collections;
 
 import static org.junit.Assert.*;
 
-public class AgendaStepdefs extends TestConfig implements En {
+public class AgendaCreationStepdefs extends TestConfig implements En {
 
     @LocalServerPort
     private int port;
@@ -29,7 +29,7 @@ public class AgendaStepdefs extends TestConfig implements En {
     @Autowired
     private RestTemplate restTemplate;
 
-    public AgendaStepdefs() {
+    public AgendaCreationStepdefs() {
         Given("^a title (.*)$", (String title) -> {
             world.map.put("title", title);
         });

@@ -59,7 +59,7 @@ Feature: Create agenda
 
   Scenario: Find all agendas filtering by status
     Given a status WAITING_FOR_VOTING
-    When request all agendas
+    When request all agenda filtering by status
     Then should return status 200
     And a list of agendas
     And all agendas should have a status equal to the used to filter
@@ -84,6 +84,13 @@ Feature: Create agenda
     And updated agenda
     And a new agenda's status equal to status used to update
 
+  Scenario: Find all agendas filtering by status
+    Given a status VOTING_IN_PROGRESS
+    When request all agenda filtering by status
+    Then should return status 200
+    And a list of agendas
+    And all agendas should have a status equal to the used to filter
+
   Scenario: Update the state of an Agenda by it's id
     Given an id
     And a status CLOSED_VOTE
@@ -91,3 +98,10 @@ Feature: Create agenda
     Then should return status 200
     And updated agenda
     And a new agenda's status equal to status used to update
+
+  Scenario: Find all agendas filtering by status
+    Given a status CLOSED_VOTE
+    When request all agenda filtering by status
+    Then should return status 200
+    And a list of agendas
+    And all agendas should have a status equal to the used to filter

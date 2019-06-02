@@ -82,7 +82,7 @@ public class FindAgendaStepdefs extends TestConfig implements En {
                 world.status = e.getRawStatusCode();
             }
         });
-        When("^request all agenda filtering by statuss$", () -> {
+        When("^request all agenda filtering by status$", () -> {
             world.status = 200;
 
             HttpHeaders headers = new HttpHeaders();

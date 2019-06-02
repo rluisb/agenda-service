@@ -3,8 +3,8 @@ server:
   servlet:
     context-path: /agenda-service/v1
 
-spring:
-  mongodb:
-    embedded:
-      storage:
-        database-dir: /tmp/agenda-test-data
+#spring:
+#  mongodb:
+#    embedded:
+#      storage:
+#        database-dir: /tmp/agenda-test-data

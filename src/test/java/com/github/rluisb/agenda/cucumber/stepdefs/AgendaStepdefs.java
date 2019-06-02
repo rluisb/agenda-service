@@ -33,11 +33,17 @@ public class AgendaStepdefs extends TestConfig implements En {
         Given("^a title (.*)$", (String title) -> {
             world.map.put("title", title);
         });
+        Given("^an empty title$", () -> {
+            world.map.put("title", "");
+        });
         Given("^a description (.*)$", (String description) -> {
             world.map.put("description", description);
         });
         Given("^a subject (.*)$", (String subject) -> {
             world.map.put("subject", subject);
+        });
+        Given("^an empty subject", () -> {
+            world.map.put("subject", "");
         });
         Given("^create a new agenda$", () -> {
             world.status = 200;
@@ -76,5 +82,9 @@ public class AgendaStepdefs extends TestConfig implements En {
         Then("^should contain a message equal (.*)$", (String errorMessage) -> {
             assertTrue(world.errorMessage.contains(errorMessage));
         });
+        Then("^a null description$", () -> {
+            assertNull(world.agenda.getDescription());
+        });
+
     }
 }

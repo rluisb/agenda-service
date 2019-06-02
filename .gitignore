@@ -27,4 +27,7 @@ HELP.md
 /.nb-gradle/
 
 ### VS Code ###
-.vscode/
+.vscode
+
+### ignore test data ###
+src/test/resources/data

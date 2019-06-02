@@ -70,8 +70,24 @@ Feature: Create agenda
     Then should return status 200
     And an agenda with an id equal to the id used to filter
 
-  Scenario: Find agenda by id
+  Scenario: Find agenda by id with error for invalid id
     Given an invalid id
     When request an agenda filtering by it's id
     Then should return status 400
     And a message containing No records found for this request.
+
+  Scenario: Update the state of an Agenda by it's id
+    Given an id
+    And a status VOTING_IN_PROGRESS
+    When update the agenda status
+    Then should return status 200
+    And updated agenda
+    And a new agenda's status equal to status used to update
+
+  Scenario: Update the state of an Agenda by it's id
+    Given an id
+    And a status CLOSED_VOTE
+    When update the agenda status
+    Then should return status 200
+    And updated agenda
+    And a new agenda's status equal to status used to update

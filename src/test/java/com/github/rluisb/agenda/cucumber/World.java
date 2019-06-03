@@ -1,7 +1,6 @@
 package com.github.rluisb.agenda.cucumber;
 
 import com.github.rluisb.agenda.domain.model.Agenda;
-import com.github.rluisb.agenda.domain.model.AgendaStatus;
 import com.google.common.collect.Maps;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -18,6 +17,5 @@ public class World {
     public String errorMessage;
     public Agenda agenda;
     public List<Agenda> agendas;
-    public AgendaStatus agendaStatus;
     public String agendaId;
 }

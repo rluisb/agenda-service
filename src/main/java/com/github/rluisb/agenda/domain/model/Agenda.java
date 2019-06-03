@@ -11,7 +11,6 @@ public class Agenda implements Serializable {
     private String title;
     private String subject;
     private String description;
-    private AgendaStatus status;
 
 
     public Agenda() {
@@ -21,23 +20,13 @@ public class Agenda implements Serializable {
         this.title = agendaDto.getTitle();
         this.subject = agendaDto.getSubject();
         this.description = agendaDto.getDescription();
-        this.status = AgendaStatus.WAITING_FOR_VOTING;
     }
 
-    private Agenda(Agenda agenda, AgendaStatus newStatus) {
-        this.id = agenda.getId();
-        this.title = agenda.getTitle();
-        this.subject = agenda.getSubject();
-        this.description = agenda.getDescription();
-        this.status = newStatus;
-    }
-
-    private Agenda(String id, String title, String subject, String description, AgendaStatus status) {
+    private Agenda(String id, String title, String subject, String description) {
         this.id = id;
         this.title = title;
         this.subject = subject;
         this.description = description;
-        this.status = status;
     }
 
     public String getId() {
@@ -56,20 +45,12 @@ public class Agenda implements Serializable {
         return description;
     }
 
-    public AgendaStatus getStatus() {
-        return status;
-    }
-
-    public Agenda updateStatus(AgendaStatus agendaStatus) {
-        return new Agenda(this, agendaStatus);
-    }
-
     public static Agenda buildFrom(AgendaDto agendaDto) {
         return new Agenda(agendaDto);
     }
 
     public static Agenda buildFrom(AgendaEntity agendaEntity) {
         return new Agenda(agendaEntity.getId(), agendaEntity.getTitle(), agendaEntity.getSubject(),
-                agendaEntity.getDescription(), agendaEntity.getStatus());
+                agendaEntity.getDescription());
     }
 }

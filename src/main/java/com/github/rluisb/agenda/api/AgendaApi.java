@@ -1,8 +1,7 @@
 package com.github.rluisb.agenda.api;
 
-import com.github.rluisb.agenda.service.AgendaService;
 import com.github.rluisb.agenda.api.dto.AgendaDto;
-import com.github.rluisb.agenda.domain.model.AgendaStatus;
+import com.github.rluisb.agenda.service.AgendaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,15 +32,7 @@ public class AgendaApi {
     }
 
     @GetMapping("/agendas")
-    public ResponseEntity<?> getAllAgendas(@RequestParam(value = "status", required = false) AgendaStatus status) {
-        if (Objects.nonNull(status)) {
-            return Stream.of(status)
-                    .map(agendaService::findAgendaByStatus)
-                    .filter(agendas -> !agendas.isEmpty())
-                    .map(ResponseEntity::ok)
-                    .findFirst()
-                    .get();
-        }
+    public ResponseEntity<?> getAllAgendas() {
         return Stream.of(agendaService.findAllAgendas())
                 .filter(Objects::nonNull)
                 .filter(agendas -> !agendas.isEmpty())
@@ -62,16 +53,4 @@ public class AgendaApi {
                 .get();
     }
 
-    @PatchMapping("/agendas/{id}")
-    public ResponseEntity<?> updateAgendaStatus(@PathVariable("id") String id,
-                                                @RequestParam("status") AgendaStatus newStatus) {
-        return Stream.of(id)
-                .filter(Objects::nonNull)
-                .map(actualId -> agendaService.updateAgendaStatus(actualId, newStatus))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .map(ResponseEntity::ok)
-                .findFirst()
-                .get();
-    }
 }

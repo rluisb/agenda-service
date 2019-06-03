@@ -4,7 +4,6 @@ import com.github.rluisb.agenda.TestConfig;
 import com.github.rluisb.agenda.api.dto.AgendaDto;
 import com.github.rluisb.agenda.cucumber.World;
 import com.github.rluisb.agenda.domain.model.Agenda;
-import com.github.rluisb.agenda.domain.model.AgendaStatus;
 import cucumber.api.java8.En;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -75,9 +74,6 @@ public class AgendaCreationStepdefs extends TestConfig implements En {
         });
         Then("^this agenda should have an id$", () -> {
             assertNotNull(world.agenda.getId());
-        });
-        Then("^should have a status (.*)$", (AgendaStatus status) -> {
-            assertEquals(status, world.agenda.getStatus());
         });
         Then("^should contain a message equal (.*)$", (String errorMessage) -> {
             assertTrue(world.errorMessage.contains(errorMessage));

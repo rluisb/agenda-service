@@ -10,7 +10,6 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("se.transmode.gradle:gradle-docker:1.2")
     }
 }
 
@@ -20,12 +19,11 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'docker'
 
 group = 'com.github.rluisb'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 configurations {
     developmentOnly
@@ -77,21 +75,3 @@ task cucumber() {
 application {
     mainClassName = 'com.github.rluisb.agenda.AgendaServiceApplication'
 }
-
-distDocker {
-    dryRun = true
-    exposePort(8080)
-    setEnvironment('JAVA_OPTS', "-Xmx1024m -Xms1024m -Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Sao_Paulo")
-}
-
-task distDockerLocal(type: Docker) {
-    dryRun = false
-    addFile("${project.buildDir}/${project.libsDirName}/${rootProject.name}.jar", "/")
-    exposePort(8080)
-    setEnvironment('JAVA_OPTS', "-Xmx512m -Xms512m -Djava.security.egd=file:/dev/./urandom ")
-
-    entryPoint(['java', '-Djava.security.egd=file:/dev/./urandom', '-jar', '/' + "${rootProject.name}" + '.jar'])
-}
-
-distDocker.dependsOn(jar)
-distDockerLocal.dependsOn(build)
